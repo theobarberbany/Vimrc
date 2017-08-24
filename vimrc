@@ -43,7 +43,7 @@ set directory=~/.vim/swap//
 set undodir=~/.vim/undo//
 
 set nocompatible              " required
-filetype on                  " required
+filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -56,6 +56,19 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
+" For GitHub repos, you specify plugins using the
+" 'user/repository' format
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'ervandew/supertab'
+Plugin 'itchyny/lightline.vim'
+Plugin 'scrooloose/nerdcommenter'
+" We could also add repositories with a ".git" extension
+Plugin 'scrooloose/nerdtree.git'
+
+" To get plugins from Vim Scripts, you can reference the plugin
+" by name as it appears on the site
+Plugin 'Buffergator'
 
 
 " All of your Plugins must be added before the following line

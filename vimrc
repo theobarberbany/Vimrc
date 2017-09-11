@@ -14,11 +14,22 @@ set number
 set colorcolumn=90
 
 "set leader key
-let mapleader=" "
-"map space+s to reload vim
+let mapleader=","
+"map comma+s to reload vim
 map <leader>s :source ~/.vimrc<CR>
 "keep stuff in memory to make faster
 set hidden
+" Give a shortcut key to NERD Tree
+map <F6> :NERDTreeToggle<CR>
+
+"Show HIDDEN files in NerdTree
+let NERDTreeShowHidden=1
+
+"autopen NERDTree and focus cursor in new document
+autocmd VimEnter * NERDTree
+autocmd VimEnter * wincmd p
+" Autoclose nerdtree when it's the last thing and buffer is empty
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 set history=100
 "indenting logic
@@ -31,12 +42,21 @@ set autoindent
 set hlsearch
 "cancel search with escape
 nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
-"re-open previously opened file using double space
+"re-open previously opened file using double comma
 nnoremap <Leader><Leader> :e#<CR>
 "show matching parenthesis
 set showmatch
 "set terminal colours to 256
 let &t_Co=256
+"lightline config
+set laststatus=2
+"remove vim's normal mode bar 
+set noshowmode
+"lightline theme
+let g:lightline = {
+      \ 'colorscheme': 'seoul256',
+      \ }
+
 "set swap, backup and undo files to be written to my home directory
 set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//

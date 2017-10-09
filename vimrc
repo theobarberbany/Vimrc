@@ -5,7 +5,7 @@ syntax on
 colorscheme Tomorrow-Night 
 
 "set font
-set guifont=Menlo\ Regular:h18
+"set guifont=Menlo\ Regular:h18
 
 "line numbers
 set number

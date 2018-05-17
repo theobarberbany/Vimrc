@@ -19,7 +19,7 @@ let mapleader=","
 map <leader>s :source ~/.vimrc<CR>
 "keep stuff in memory to make faster
 set hidden
-" Give a shortcut key to NERD Tree
+" Give a shortcut key to NERD Tree (f6)
 map <F6> :NERDTreeToggle<CR>
 
 "Show HIDDEN files in NerdTree
@@ -65,6 +65,8 @@ set undodir=~/.vim/undo//
 set nocompatible              " required
 filetype off                  " required
 
+"=-=-=-=-=-VIM-GO Plugin=-=-=-=-=-
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -85,6 +87,7 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'scrooloose/nerdcommenter'
 " We could also add repositories with a ".git" extension
 Plugin 'scrooloose/nerdtree.git'
+Plugin 'fatih/vim-go'
 
 " To get plugins from Vim Scripts, you can reference the plugin
 " by name as it appears on the site
@@ -94,4 +97,4 @@ Plugin 'Buffergator'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
-
+set backspace=2
